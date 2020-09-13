@@ -44,18 +44,6 @@ function brew_install {
     brew install $1
 }
 
-sample() {
-    allThreads=(1 2 4 8 16 32 64 128)
-    allRuntimes=()
-    for t in ${allThreads[@]}; do
-        # runtime=$(./pipeline --threads $t)
-        echo 'checking...'
-        echo $t
-        allRuntimes+=( $t )
-    done
-    echo $allRuntimes
-}
-
 function main {
     unavailable_comands=()
     IS_ANY_COMMAND_UNAVAILABLE=0
