@@ -61,6 +61,18 @@ function main {
         IS_ANY_COMMAND_UNAVAILABLE=1
     fi
 
+    if ! exists figlet; then
+        unavailable_comands+=('figlet')
+        say_uninstalled 'figlet'
+        IS_ANY_COMMAND_UNAVAILABLE=1
+    fi
+
+    if ! exists lolcat; then
+        unavailable_comands+=('lolcat')
+        say_uninstalled 'lolcat'
+        IS_ANY_COMMAND_UNAVAILABLE=1
+    fi
+
     if [ $IS_ANY_COMMAND_UNAVAILABLE -eq 1 ]; then
         test_brew_exists
         for t in ${unavailable_comands[@]}; do
